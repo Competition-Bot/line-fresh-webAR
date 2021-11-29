@@ -24,6 +24,15 @@
     }
 </style>
 <link rel="stylesheet" href="index.css">
+<script>
+    const getCameraStream = video => { //要 camera 的權限
+        navigator.mediaDevices
+            .getUserMedia(constraints)
+            .then(function success(stream) {
+                video.srcObject = stream;
+            });
+    };
+</script>
 
 <body style="margin : 0px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
     <img style='position: absolute;' src="./bird.png" />
